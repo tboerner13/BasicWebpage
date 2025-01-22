@@ -1,0 +1,29 @@
+/*type selector*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lavender;
+    color: #333;
+}
+h1{
+    color: green;
+    text-align: center;
+}
+p{
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/*class selector*/
+.highlight{
+    background-color: lightgreen;
+
+}
+
+/*universal selector*/
+
+*{
+    text-align: center;
+}
+
+/*id selector*/
+
