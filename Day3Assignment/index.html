@@ -19,24 +19,69 @@
         
     </script>
     <style>
+         /*Flex Container...*/
+         .flex-container{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            height: auto;
+            padding: 2px;
+        }
+
+        /*Flex Header...*/
+        .flex-header{
+            background: linear-gradient(90deg, #000, #ff0000);
+            padding: 30px;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.9);
+        }
+
+        .flex-p{
+            padding: 20px;
+            background-color: rgba(0,0,0,0.2);
+        }
         header{
             font-size: 100px;
         }
         .pirate{
             font-family: 'Pirata One', cursive;
         }
+        button{
+            font-family: 'Pirata One', cursive;
+            background-color: #777
+        }
+        button:hover{
+            transform: scale(1.1);
+            background-color: #999;
+            cursor: pointer;
+        }
     </style>
 
 </head>
 <body style="background-image: url(images/mapBackground.jpg);">
-    <header class="pirate">Captain Jack Sparrow</header>
-    <p>Jack Sparrow, he is captain of the black pearl, evader of Davy Jones and Death itself, lover of rum, sometimes a good man, and always a pirate. Captain Jack has captured the hearts of many people over the past twenty years, and he will continue to live on as the greatest pirate we've ever seen, or at least, so it would seem. There will never be another pirate movie quite like <i>The Pirates of the Caribbean.</i> Ultimately, that is because there is no pirate quite like Captain Jack Sparrow, and he makes the films as great as they are.</p>
-    <p>"I've got a jar of dirt!" - <span class="pirate">Captain Jack Sparrow</span></p>
-    <p>You have so much more than that Captain, you have carried an entire franchise on your back, and they will never be able to replace you.</p>
-    <!--THIS IS FOR THE NEXT ASSIGNMENT, I WAS PLAYING AROUND AND TRYING TO FIGURE OUT HOW TO CHANGE AN IMAGE BY CLICKING A BUTTON-->
-    <button id="clickme" onclick="changeImage();">Click to change image!</button>
-    <br><br>
-    <img id="image" src="images/CaptainJack.jpg" />
+    <div class="flex-container">
+        <div class='flex-header'>
+            <header class="pirate">Captain Jack Sparrow</header>
+        </div>
+        <div class = 'flex-p'>
+            <p>Jack Sparrow, he is captain of the black pearl, evader of Davy Jones and Death itself, lover of rum, sometimes a good man, and always a pirate. Captain Jack has captured the hearts of many people over the past twenty years, and he will continue to live on as the greatest pirate we've ever seen, or at least, so it would seem. There will never be another pirate movie quite like <i>The Pirates of the Caribbean.</i> Ultimately, that is because there is no pirate quite like Captain Jack Sparrow, and he makes the films as great as they are.</p>
+            <p>"I've got a jar of dirt!" - <span class="pirate">Captain Jack Sparrow</span></p>
+            <p>You have so much more than that Captain, you have carried an entire franchise on your back, and they will never be able to replace you.</p>
+        </div>
+        
+    </div>
+        <!--THIS IS FOR THE NEXT ASSIGNMENT, I WAS PLAYING AROUND AND TRYING TO FIGURE OUT HOW TO CHANGE AN IMAGE BY CLICKING A BUTTON-->
+        <button id="clickme" onclick="changeImage();">Curse!</button>
+        <br><br>
+        <img id="image" src="images/CaptainJack.jpg" />
+    
+
     
     
 </body>
