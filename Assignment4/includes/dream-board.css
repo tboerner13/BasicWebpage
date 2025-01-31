@@ -1,0 +1,108 @@
+body{
+    background-color: darkblue;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:75 1fr 1fr 100px;
+    gap: 10px;
+}
+header, footer{
+    grid-column: 1 / 4;
+}
+
+.item1, .item2, .item3{
+    background: linear-gradient( darkblue, darkblue, #6a0d83, #6a0d83);
+}
+
+.item4,.item5,.item6{
+    background: linear-gradient( #6a0d83, #ce4993, #ee5d6c);
+}
+
+
+@media screen and (max-width: 900px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:75 1fr 1fr 1fr 100px;
+        gap: 10px;
+    }
+    header, footer{
+        grid-column: 1 / 3;
+    }
+    .item1, .item2{
+        background: linear-gradient( darkblue, darkblue, #6a0d83, #6a0d83);
+    }
+    
+    .item3,.item4{
+        background: linear-gradient( #6a0d83, #ce4993, #ee5d6c);
+    }
+    .item5,.item6{
+        background: linear-gradient( #ee5d6c, #ce4993, #6a0d83, darkblue);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows:75 1fr 1fr 1fr 1fr 1fr 1fr 100px;
+        gap: 10px;
+    }
+    header, footer{
+        grid-column: 1 / 2;
+    }
+    .item1, .item4{
+        background: linear-gradient( darkblue, darkblue, #6a0d83, #6a0d83);
+    }
+    
+    .item2,.item5{
+        background: linear-gradient( #6a0d83, #ce4993, #ee5d6c);
+    }
+    .item3,.item6{
+        background: linear-gradient( #ee5d6c, #ce4993, #6a0d83, darkblue);
+    }
+}
+
+
+.grid-container > div {
+    text-align: justify;
+    color: white;
+    padding: 5px;
+    border: solid 2px;
+    box-shadow: 2px 5px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+.grid-container > div:hover {
+    transform: scale(1.02);
+    cursor: default;
+}
+
+img{
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+header, footer{
+    text-align: center;
+    color: white;
+    border: solid 2px;
+    box-shadow: 4px 7px rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ce4993, darkblue, #ce4993);
+    padding: 20px;
+}
+
+h3{
+    text-align: center;
+    margin-top: 2px;
+}
+
+figcaption{
+    font-style: italic;
+}
+
