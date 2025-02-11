@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Tyler Boerner">
+    <title>Assignment 7</title>
+    <style>
+        body{
+            background-color: lightgray;
+            justify-items: center;
+        }
+        .container{
+            justify-items: center;
+            display:block;
+            width: 50vw;
+            min-width: 400px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: lightblue;
+        }
+        .form-styling{
+            text-align: center;
+        }
+        .form-styling > h3{
+            margin: 0 0;
+        }
+        .form-styling > input{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Assignment 7</h1>
+        <form class="form-styling">
+            <h3>Name:</h3>
+            <input type="text" id="name" placeholder="Enter Name" required>
+            <h3>Email:</h3>
+            <input type="email" id="email" placeholder="Enter Email" required>
+            <h3>Password:</h3>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <h3>Age:</h3>
+            <input type="number" id="age" min="18" placeholder="18+" required>
+            <h3>Gender:</h3>
+            <div id="radio-buttons">
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </div>
+            <br>
+            <h3>Country:</h3>
+            <div id="dropdown-menu">
+                <select name="country" id="country" required>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Australia">Australia</option>
+                    <option value="UK">UK</option>
+                  </select>
+            </div>
+            <br>
+            <h3>Terms and Conditions:</h3>
+            <div id="termsAndConditions">
+                <input type="checkbox" id="terms_conditions" name="terms_conditions" value="Terms and Conditions" required>
+                <label for="terms_conditions">Do you agree to the terms and conditions?</label>
+            </div>
+            <br>
+            <input type="button" id="submit" value="Submit">
+        </form>
+
+        <p id="print-content"></p>
+    </div>
+</body>
+<script>
+    
+
+    document.getElementById('submit').addEventListener("click", function(){
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        let age = document.getElementById('age').value;
+        let gender = document.querySelector('input[name="gender"]:checked');
+        gender = gender ? gender.value : "Not selected";
+        let country = document.getElementById('country').value;
+
+        
+        document.getElementById('print-content').innerHTML = 
+        'Name: ' + name + '<br>' +
+        'Email: ' + email + '<br>' +
+        'Password: ' + password + '<br>' +
+        'Age: ' + age + '<br>' +
+        'Gender: ' + gender + '<br>' +
+        'Country: ' + country;
+})
+</script>
+</html>
