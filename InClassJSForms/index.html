@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Tyler Boerner">
+    <title>In Class Assignment JS Forms</title>
+    <style>
+        body{
+            background-color: lightgray;
+            justify-items: center;
+        }
+        .container{
+            justify-items: center;
+            display:block;
+            width: 50vw;
+            min-width: 400px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: lightblue;
+        }
+        .form-styling{
+            text-align: center;
+        }
+        .form-styling > h3{
+            margin: 0 0;
+        }
+        .form-styling > input{
+            margin-bottom: 20px;
+        }
+        #submit:hover {
+            background-color: darkslateblue;
+            color: white;
+            cursor: pointer;
+            border: 1px solid gray;
+            border-radius: 2px;
+        }
+        .error {
+            color: red;
+            margin-top: -20px;
+            margin-bottom: 10px;
+        }
+        #success-message {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>In Class Assignment JS Forms</h1>
+        <form class="form-styling">
+            <h3>Name:</h3>
+            <input type="text" id="name" placeholder="Enter Name" required>
+            <p class="error" id="name-error"></p>
+
+            <h3>Email:</h3>
+            <input type="email" id="email" placeholder="Enter Email" required>
+            <p class="error" id="email-error"></p>
+
+            <h3>Age:</h3>
+            <input type="number" id="age" min="18" max="100" placeholder="18+" required>
+            <p class="error" id="age-error"></p>
+
+            <input type="button" id="submit" value="Submit">
+        </form>
+
+        <p id="success-message"></p>
+    </div>
+</body>
+<script>
+    
+
+    document.getElementById('submit').addEventListener("click", function(){
+        let isValid = true;
+        let name = document.getElementById('name');
+        let email = document.getElementById('email');
+        let age = document.getElementById('age');
+
+        let nameError = document.getElementById('name-error');
+        let emailError = document.getElementById('email-error');
+        let ageError = document.getElementById('age-error');
+        let successMessage = document.getElementById('success-message');
+
+        // Reset everything
+        nameError.textContent = "";
+        emailError.textContent = "";
+        ageError.textContent = "";
+        successMessage.textContent = "";
+        name.style.border = "1px solid gray";
+        email.style.border = "1px solid gray";
+        age.style.border = "1px solid gray";
+
+        // Validate Name
+        if (name.value == "") {
+            nameError.textContent = "Name is required.";
+            isValid = false;
+            name.style.borderColor = 'red';
+        }
+
+        // Validate Email
+        let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (email.value == "") {
+            emailError.textContent = "Email is required.";
+            isValid = false;
+            email.style.borderColor = 'red';
+        } else if (!emailPattern.test(email.value)) {
+            emailError.textContent = "Invalid email format.";
+            isValid = false;
+            email.style.borderColor = 'red';
+        }
+
+        // Validate Age
+        if (age.value == "") {
+            ageError.textContent = "Age is required.";
+            isValid = false;
+            age.style.borderColor = 'red';
+        } else if (age.value < 18 || age.value > 100) {
+            ageError.textContent = "Age must be between 18 and 100.";
+            isValid = false;
+            age.style.borderColor = 'red';
+        }
+
+        // If valid, show success message and clear form
+        if (isValid) {
+            successMessage.textContent = "Form submitted successfully!";
+            name.value = "";
+            email.value = "";
+            age.value = "";
+            name.style.border = "1px solid gray";
+            email.style.border = "1px solid gray";
+            age.style.border = "1px solid gray";
+        }
+    })
+</script>
+</html>
