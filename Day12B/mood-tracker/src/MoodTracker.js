@@ -13,14 +13,14 @@ export default function MoodTracker(){
         setMood('😁')
         setDesc('I\'m super excited when I get to teach at the middle school.')
         setLink('https://www.youtube.com/watch?v=9x5WY_jmsko')
-        setMemory('I was beaming when some of the students at the middle school gave me cookies for Christmas')
+        setMemory('I was beaming when some of the students at the middle school gave me cookies for Christmas.')
         setHidden(false)
         setBgColor('aqua')
     }
 
     function happy(){
         setMood('😊')
-        setDesc('I feel happy when I\'m home')
+        setDesc('I feel happy when I\'m home.')
         setLink('https://www.youtube.com/watch?v=pSw8an1u3rc')
         setMemory('One of my happiest memories is getting to spend a week in Florida with my friends for our senior trip after we graduated high school.')
         setHidden(false)
@@ -40,7 +40,7 @@ export default function MoodTracker(){
         setMood('😢')
         setDesc('I am a little sad every time I move on from a school, but such is life.')
         setLink('https://www.youtube.com/watch?v=-2U0Ivkn2Ds')
-        setMemory('It was not easy leaving for Tech for the first time. I missed my friends and family, and the band program was not what I hoped it would be')
+        setMemory('It was not easy leaving for Tech for the first time. I missed my friends and family, and the band program was not what I hoped it would be.')
         setHidden(false)
         setBgColor('pink')
     }
