@@ -39,8 +39,8 @@ function App() {
           <h3 className='font-bold'>Contact Info:</h3>
           <p className=''>8500 General Grant Ln.</p>
           <p className=''>Affton, MO 63123</p>
-          <p className=''>tjb0013@gmail.com</p>
-          <p className=''>618-772-4342</p>
+          <p><a href='mailto:tjb0013@gmail.com'>tjb0013@gmail.com</a></p>
+          <p><a href="tel:+16187724342">618-772-4342</a></p>
         </div>
       </div>
 
