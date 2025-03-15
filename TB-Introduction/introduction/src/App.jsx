@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import TylerHeadshot from "./assets/TylerHeadshot2_Edited.jpeg";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,7 +11,7 @@ function App() {
     <>
       <div className='w-screen'>
         <header className='bg-blue-500 w-full'>
-          <h1>Title</h1>
+          <h1>Tyler Boerner</h1>
         </header>
       </div>
 
@@ -23,52 +24,44 @@ function App() {
         </ul>
       </div>
 
+      <div className='grid grid-cols-4 gap-4 mt-5'>
+        <div className='col-start-1 col-end-2 align-middle'>
+          <h2 className='font-bold place-self-center'>Tyler Boerner</h2>
+          <img src={TylerHeadshot} alt="Headshot" className='w-48 place-self-center border-3 border-blue-500 rounded-2xl shadow-[0_0_15px_#3b82f6]'></img>
+        </div>
+        
+        <div className='col-start-2 col-end-4 place-self-start align-middle'>
+          <h3 className=' font-bold text-left ml-2'>Bio:</h3>
+          <p className='text-left'>Hello there! My name is Tyler Boerner, and I am currently finishing my Computer Science degree at Arkansas Tech University. I have also completed a Certificate of Proficiency in Mathematics. Now, I am looking to shift gears and get a job teaching middle school math. I hope to begin the Teach-In-Residency program at UMSL in the fall, but I need to get a job with a district that is willing to let me work on a provisional certificate. </p>
+        </div>
 
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <div className='col-start-4 place-self-start justify-items-end align-middle'>
+          <h3 className='font-bold'>Contact Info:</h3>
+          <p className=''>8500 General Grant Ln.</p>
+          <p className=''>Affton, MO 63123</p>
+          <p className=''>tjb0013@gmail.com</p>
+          <p className=''>618-772-4342</p>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className='flex space-x-3 mt-10 gap-4 justify-evenly flex-wrap'>
+        <div className='w-72 h-72 border-3 border-blue-500 rounded shadow-[0_0_15px_#3b82f6] p-2'>
+          <h3 className=' font-bold text-left ml-2'>Skills:</h3>
+          <p className='text-left'></p>
+        </div>
+
+        <div className='w-72 h-72 border-3 border-blue-500 rounded shadow-[0_0_15px_#3b82f6] p-2'>
+          <h3 className=' font-bold text-left ml-2'>Education:</h3>
+          <p className='text-left'>Computer Science Degree</p>
+        </div>
+
+        <div className='w-72 h-72 border-3 border-blue-500 rounded shadow-[0_0_15px_#3b82f6] p-2'>
+          <h3 className=' font-bold text-left ml-2'>Experience:</h3>
+          <p className='text-left'></p>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      
     </>
   )
 }
