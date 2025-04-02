@@ -18,3 +18,5 @@ Day 14: NodeJS and ExpressJS
 Day 15: Middleware
 
 Day 16: More Middleware
+
+Day 17: Postgre SQL
