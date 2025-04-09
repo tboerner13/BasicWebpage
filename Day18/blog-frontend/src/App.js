@@ -6,7 +6,7 @@ function App(){
   const [form, setForm] = useState({title: '', body: ''});
 
   useEffect(() => {
-    axios.get('http:localhost:5000/posts')
+    axios.get('http://localhost:5000/posts')
     .then(res=>setPosts(res.data))
     .catch(err=>console.error("Error fetching posts:", err));
   }, [])
@@ -38,15 +38,19 @@ function App(){
         onChange={handleChange}
         style={{width: '100%', padding: '10px', height: '100px', marginBottom: '10px'}}/>
 
+        <button type='submit' style={{padding: '10px 20px'}}>Submit Post</button>
+
       </form>
 
       <h2>Blog Posts</h2>
-      {posts.map(post => {
+      {posts.map(post => (
         <div key={post.id} style={{border: '1px solid #ccc', padding: '10px', marginBottom: '15px'}}>
           <h3>{post.title}</h3>
           <p>{post.body}</p>
         </div>
-      })}
+      ))}
     </div>
   )
 }
+
+export default App;
