@@ -20,7 +20,7 @@ console.error('MongoDB error', err));
 const postSchema = new mongoose.Schema({
     title: String,
     body: String,
-});
+}, { timestamps: true });
 
 const Post = mongoose.model('Post', postSchema);
 
@@ -45,6 +45,26 @@ app.post('/posts', async (req, res) => {
     }
 });
 
+app.delete('/posts/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      await Post.findByIdAndDelete(id);
+      res.json({ message: 'Post deleted' });
+    } catch (err) {
+      res.status(500).json({ message: 'Failed to delete post' });
+    }
+  });
+  
+  app.put('/posts/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { title, body } = req.body;
+      const updatedPost = await Post.findByIdAndUpdate(id, { title, body }, { new: true });
+      res.json(updatedPost);
+    } catch (err) {
+      res.status(500).json({ message: 'Failed to update post' });
+    }
+  });
 
 //Start Server
 app.listen(PORT, ()=>{
