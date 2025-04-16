@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+Setup: 
+1. Do npm install express mongoose cors #this will be for the server.js
+2. Do npm install axios
+3. Download MongoDB if you don't already have it, MongoDBCompass will be the easiest to work with alongside mongosh
+4. Setup the tables for mongoDB to interact with. If you want the same collection, you'll need to name it posts and then make sure that you are posting to MongoDBCompass or Postman with a title and body for each data point.
+5. In server.js change the port if you want and change the connection to ensure you are connecting with your database
+6. In blog-backend, do npm install nodemon and then do npm nodemon server.js to run the server
+7. In blog-frontend, do npm start to start the the website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Working App:
+LINK
 
-## Available Scripts
+New Features:
+Delete button: Each post that is printed will now include a delete button that will delete the post from the website and the database. It is set up in the server.js to delete by id that way the user can't accidentally delete the wrong post.
 
-In the project directory, you can run:
+Edit button: Each post now includes an edit button that allows a user to change a post. It also uses the id to edit. With the edit button, made a variable called isEditing that will be set to true if the edit button is clicked. This changes the website to say 'Edit Post' instead of 'Create a Blog Post'. It adds new buttons to the form also. It changes 'Submit Post' to 'Update Post' and adds a 'Cancel Post button'
 
-### `npm start`
+Update Post Button: sends an update to the post that was selected.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Cancel Post Button: changes 'isEditing' to false to shift the website back into 'Create a Blog Post' mode for the form.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Windows Confirmation: in App.js, made a new handleDelete function that includes a windows pop-up for delete confirmation. 
 
-### `npm test`
+Timestamps: added timestamps by including them in the schema for the posts. It is an option that you can set to true, it will set createdAt and updatedAt values, but we only access the createdAt values in the rest of the code.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Loading "Spinner": created a variable, 'loading' that is set to false by default. It is updated when the useEffect attempts to pull the posts from the database. While loading, it just prints on the screen "Loading..." and doesn't print any of the normal data. It's not really a spinner, just a message that lets you know that the website is loading.
 
-### `npm run build`
+Some light CSS just to make the website look a little more colorful and give the buttons some flavor.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
