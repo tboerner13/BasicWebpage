@@ -8,7 +8,7 @@ Setup:
 7. In blog-frontend, do npm start to start the the website
 
 Working App:
-LINK
+https://video.atu.edu/media/Demo/1_20v986hx
 
 New Features:
 Delete button: Each post that is printed will now include a delete button that will delete the post from the website and the database. It is set up in the server.js to delete by id that way the user can't accidentally delete the wrong post.
